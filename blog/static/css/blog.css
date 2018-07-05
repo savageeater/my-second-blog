@@ -1,13 +1,15 @@
 h1 a {
-    color: #FCA205;
+    color: #FFCCFF;
     font-family: 'Lobster';
 }
 body {
     padding-left: 15px;
 }
+
 .page-header {
-    background-color: #ff9400;
+    background-color: #330000;
     margin-top: 0;
+    margin-bottom: 0;
     padding: 20px 20px 20px 40px;
 }
 
@@ -18,7 +20,30 @@ body {
 }
 
 .content {
+	margin-top:  20px;
     margin-left: 40px;
+}
+
+.nav {
+    margin-bottom: 0;
+    padding: 0px 20px 0px 40px;
+    font-weight: bold
+}
+
+.navbar-brand {
+    margin-bottom: 0;
+    padding: 0px 20px 0px 40px;
+    font-weight: bold
+}
+
+.dropdown {
+    margin-bottom: 0;
+    padding: 0px 20px 0px 40px;
+    font-weight: bold
+}
+
+.margin1{
+	margin-top:  220px;
 }
 
 h1, h2, h3, h4 {

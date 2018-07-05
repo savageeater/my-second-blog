@@ -9,10 +9,29 @@
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     </head>
 <body>
-    <div class="page-header">
+
+<nav class="navbar navbar-default navbar-fixed-top .navbar navbar-inverse">
+    <div class="page-header .col-md-12">
         <h1><a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></h1>
         <h1><a href="/">kuz블로그</a></h1>
-    </div>
+    	</div>
+    	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="navbar-brand"><a href="#">메인화면</a></li>
+				<li class="navbar-brand"><a href="#">게시판</a></li>
+				<li class="navbar-brand"><a href="#">방명록</a></li>
+				<li class="dropdown">
+    			<a href="#" class="navbar-brand .dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="True">로그인하기<span class="caret"></span></a>
+          			<ul class="dropdown-menu" role="menu">
+          				<li><a href="#">로그인</a></li>
+          				<li><a href="#">로그아웃</a></li>
+          				<li><a href="#">회원가입</a></li>
+          			</ul>
+          		</li>
+          	</ul>
+          </div>
+         </nav>
+		<div class="margin1"></div>
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
