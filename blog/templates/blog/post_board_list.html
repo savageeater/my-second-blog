@@ -1,27 +1,52 @@
 <!DOCTYPE html>
-{% extends 'blog/base.html' %}
-{% load staticfiles %}
+{% extends 'blog/base.html' %} {% load staticfiles %}
 <html>
-    <head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-{% block content %}
+<head>
+<title>파이썬 프로젝트</title>
+<style>
+	@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+</style>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	{% block content %}
+	<table class="table table-bordered table-striped .col-md-9">
+		<tr>
+			<th class="text-center .col-md-2">게시일</th>
+			<th class="text-center .col-md-6">제목</th>
+			<th class="text-center .col-md-1">작성자</th>
+		</tr>
+		{% for post in posts %}
+		<tr  align="center">
+			<td class="col-md-2">{{ post.published_date }}</td>
+			<td class="col-md-6"><a
+				href="{% url 'post_board_detail' pk=post.pk %}">{{ post.title }}</a>
+			</td>
+			<td
+				class="col-md-1">{{ post.text|linebreaksbr }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+<!-- 
     {% for post in posts %}
         <div class="post">
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-            <h1><a href="{% url 'post_board_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
-        </div>
-    {% endfor %}
-{% endblock %}
-    </body>
+				<div class="date">{{ post.published_date }}</div>
+				<h1>
+					<a href="{% url 'post_board_detail' pk=post.pk %}">{{
+						post.title }}</a>
+				</h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+				</div> {% endfor %} --> {% endblock %}
+</body>
 </html>

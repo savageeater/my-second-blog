@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404, render_to_response
 from django.utils import timezone
 from blog.models import Post
 from blog.models import Post_board
@@ -6,6 +6,7 @@ from .forms import PostForm
 from django.shortcuts import redirect
 from blog.forms import Post_board_Form
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 
@@ -40,21 +41,31 @@ def post_edit(request,pk):
     post = get_object_or_404(Post,pk=pk)
     if request.method =="POST":
         form = PostForm(request.POST,instance=post)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.published_date = timezone.now()
-            post.save()
-            return redirect('post_detail',pk=post.pk)
+        if(post.author=='' or post.author == request.user):
+            if form.is_valid():
+                post = form.save(commit=False)
+                post.author = request.user
+                post.published_date = timezone.now()
+                post.save()
+                return redirect('post_detail',pk=post.pk)
     else:
-            form = PostForm(instance=post)
+        form = PostForm(instance=post)
+        messages.info(request, '수정 실패 : 작성자가 일치하지 않습니다')
+        return redirect('post_list')
     return render(request,'blog/post_edit.html',{'form':form})
 
 @login_required
 def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    post.delete()
-    return redirect('post_list')
+    if post.author == request.user:
+        post.delete()
+        return redirect('post_list')
+    else :
+        messages.info(request, '삭제 실패  :작성자가 일치하지 않습니다')
+        return redirect('post_list')
+    
+
+    
 
 
 
@@ -81,7 +92,8 @@ def post_board_new(request):
         form = Post_board_Form()
     return render(request, 'blog/post_board_edit.html',{'form':form})
 
-@login_required 
+
+@login_required
 def post_board_edit(request,pk):
     post = get_object_or_404(Post_board,pk=pk)
     if request.method =="POST":
@@ -101,3 +113,4 @@ def post_board_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
     return redirect('post_board_list')
+

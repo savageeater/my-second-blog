@@ -11,3 +11,5 @@ class Post_board_Form(forms.ModelForm):
     class Meta:
         model = Post_board
         fields = ('title', 'text',)
+        
+        
