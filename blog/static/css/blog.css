@@ -1,22 +1,17 @@
 h1 a {
     color: #FFCCFF;
-    font-family: 'Noto Sans KR';
+    font-family: 'Lobster';
 }
 body {
     padding-left: 15px;
 }
 
-.messages{
-	font-family: 'Noto Sans KR';
-	margin-left: 30px;
-}
 .page-header {
     background-color: #330000;
     margin-top: 0;
     margin-bottom: 0;
     padding: 20px 20px 20px 40px;
 }
-
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
@@ -26,8 +21,7 @@ body {
 
 .content {
 	margin-top:  20px;
-    margin-left: 20px;
-    
+    margin-left: 40px;
 }
 
 .nav {
@@ -53,7 +47,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-	font-family: 'Noto Sans KR';
+    font-family: 'Lobster', cursive;
 }
 
 .date {
@@ -65,7 +59,7 @@ h1, h2, h3, h4 {
 }
 
 .post-form textarea, .post-form input {
-    width: 80%;
+    width: 100%;
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
