@@ -2,6 +2,7 @@
 h1 a{
     color: #FFCCFF;
     font-family: 'Nanum Brush Script', cursive;
+
 }
 
 body {
@@ -26,9 +27,6 @@ body {
 
 .content {
 	margin-top:  20px;
-
-    margin-left: 20px;
-
     margin-left: 40px;
     font-family: 'Nanum Brush Script', cursive;
 }
