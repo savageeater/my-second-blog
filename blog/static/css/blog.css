@@ -1,33 +1,36 @@
-h1 a {
+
+h1 a{
     color: #FFCCFF;
-    font-family: 'Noto Sans KR';
-}
-body {
-    padding-left: 15px;
+    font-family: 'Nanum Brush Script', cursive;
 }
 
-.messages{
-	font-family: 'Noto Sans KR';
-	margin-left: 30px;
+body {
+    padding-left: 15px;
+    font-family: 'Nanum Brush Script', cursive;
 }
+
 .page-header {
     background-color: #330000;
     margin-top: 0;
     margin-bottom: 0;
     padding: 20px 20px 20px 40px;
+    font-family: 'Nanum Brush Script', cursive;
 }
-
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
+    font-family: 'Nanum Brush Script', cursive;
 }
 
 .content {
 	margin-top:  20px;
+
     margin-left: 20px;
-    
+
+    margin-left: 40px;
+    font-family: 'Nanum Brush Script', cursive;
 }
 
 .nav {
@@ -48,12 +51,17 @@ body {
     font-weight: bold
 }
 
+container{
+	margin-left: 220px;
+	font-family: 'Nanum Brush Script', cursive;
+}
+
 .margin1{
 	margin-top:  220px;
 }
 
 h1, h2, h3, h4 {
-	font-family: 'Noto Sans KR';
+    font-family: 'Nanum Brush Script', cursive;
 }
 
 .date {
@@ -65,7 +73,7 @@ h1, h2, h3, h4 {
 }
 
 .post-form textarea, .post-form input {
-    width: 80%;
+    width: 100%;
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {

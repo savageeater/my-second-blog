@@ -2,21 +2,18 @@
 {% load staticfiles %}
 <html>
 <head>
-<title>파이썬 프로젝트</title>
-<style>
-	@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-</style>
+<title>kuz's blog</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-
+<link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script></script>
 </head>
 <body>
 	<nav
@@ -50,7 +47,7 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="navbar-brand"><a href="/main">PROLOGUE</a></li>
+				<li class="navbar-brand"><a href="/main">Introduce</a></li>
 				<li class="navbar-brand"><a href="{% url 'post_board_list' %}">POST</a></li>
 				<li class="navbar-brand"><a href="{% url 'post_list' %}">GUEST
 						BOARD</a></li>
@@ -67,8 +64,10 @@
 		</div>
 	</nav>
 	<div class="margin1"></div>
+	<div class="content container">
 		<div class="row">
-			<div class="col-md-9"	>{% block content %} {% endblock %}</div>
+			<div class="col-md-8">{% block content %} {% endblock %}</div>
+		</div>
 	</div>
 </body>
 </html>

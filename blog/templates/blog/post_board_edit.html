@@ -3,14 +3,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>파이썬 프로젝트</title>
+
 </head>
 <body>
 {% block content %}
-<form method="POST" class="post-form">{% csrf_token %}
+
+<!-- {{ form.as_p }}
+	{% csrf_token %}
+ -->
+
+<form method="POST" class="post-form">
+{% csrf_token %}
 {{ form.as_p }}
-<button type="submit" class="save btn btn-default">Save</button>
-</form>
+      <button type="submit" class="save btn btn-default">Save</button>
+  </form>
 {% endblock %}
 </body>
 </html>
